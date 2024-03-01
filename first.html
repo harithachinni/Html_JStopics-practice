@@ -1,0 +1,94 @@
+<html>
+
+<head></head>
+
+<body onload="loadData()">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
+            <td>AGE</td>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>nikhil</td>
+            <td>nikhil@gmal.com</td>
+            <td>21</td>
+            <td><input type="checkbox" onchange="f1(this)" /></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>amit</td>
+            <td>amit2gmail.com</td>
+            <td>20</td>
+            <td><input type="checkbox" onchange="f1(this)" /></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>neha</td>
+            <td>neha@gmail.com</td>
+            <td>22</td>
+            <td><input type="checkbox" onchange="f1(this)" /></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>shruti</td>
+            <td>shruti@gmail.com</td>
+            <td>19</td>
+            <td><input type="checkbox" onchange="f1(this)" /></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>shreya</td>
+            <td>shreya@gmail.com</td>
+            <td>21</td>
+            <td><input type="checkbox" onchange="f1(this)" /></td>
+        </tr>
+
+    </table>
+    <p id="p1"></p>
+    <script>
+
+        let students = [
+            { id: 1, name: 'nikhil', email: 'nikhil@gmail.com', age: 21 },
+            { id: 2, name: 'nitin', email: 'nitin@gmail.com', age: 20 },
+            { id: 3, name: 'neha', email: 'neha@gmail.com', age: 19 },
+            { id: 4, name: 'jatin', email: 'jatin@gmail.com', age: 22 },
+            { id: 5, name: 'vishal', email: 'vishal@gmail.com', age: 23 }
+        ]
+        function f1(x) {
+            if (x.checked) {
+
+                console.log(this, x.parentNode.parentNode.parentNode.parentNode)
+                x.parentNode.parentNode.style.backgroundColor = "red";
+            }
+            else
+                x.parentNode.parentNode.style.backgroundColor = "white";
+        }
+
+        function loadData() {
+            let name = 'amit';
+            str = '<table>';
+            for (let i = 0; i < 5; i++) {
+                str += `<tr><td>${students[i].id}</td> 
+                    <td>${students[i].name}</td>
+                    <td>${students[i].email}</td>
+                    <td>${students[i].age}</td>
+                    <td><input type="checkbox"></td>
+                   
+                    </tr>`;
+            }
+
+            str += '</table>';
+            document.getElementById("p1").innerHTML = str;
+            console.log(str);
+        }
+
+        // loadData();
+
+    </script>
+</body>
+
+</html>
